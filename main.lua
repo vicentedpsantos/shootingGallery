@@ -1,5 +1,6 @@
 -- Major variables are declared in this function
 function love.load()
+  gameFont = love.graphics.newFont("assets/chocolate_covered_raindrops.ttf", 40)
   target = {}
   target.x = 300
   target.y = 300
@@ -18,6 +19,7 @@ end
 
 -- This function is responsible for drawing things on the screen
 function love.draw()
+  drawScore()
   drawTarget( target.x, target.y, target.radius )
 end
 
@@ -35,4 +37,9 @@ function drawTarget(x, y, radius)
   drawCircle( x, y, radius - ( radius / 5 * 2 ), red )
   drawCircle( x, y, radius - ( radius / 5 * 3 ), white )
   drawCircle( x, y, radius - ( radius / 5 * 4 ), red )
+end
+function drawScore()
+  love.graphics.setColor(white)
+  love.graphics.setFont(gameFont)
+  love.graphics.print("Score: " .. score, 10, 10)
 end
