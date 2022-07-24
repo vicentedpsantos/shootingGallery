@@ -1,4 +1,4 @@
-require("game")
+require("lib.game")
 require("config")
 
 -- Colors

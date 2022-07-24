@@ -1,7 +1,7 @@
-require("drawings")
-require("sprites")
-require("target")
-require("game")
+require("lib.drawings")
+require("lib.sprites")
+require("lib.target")
+require("lib.game")
 
 -- Major variables are declared in this function
 function love.load()
