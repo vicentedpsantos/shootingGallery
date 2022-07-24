@@ -1,5 +1,12 @@
 -- Major variables are declared in this function
 function love.load()
+  target = {}
+  target.x = 300
+  target.y = 300
+  target.radius = 50
+
+  score = 0
+  timer = 0
 end
 
 -- dt = Delta Time
@@ -11,21 +18,21 @@ end
 
 -- This function is responsible for drawing things on the screen
 function love.draw()
-  drawTarget(200, 400)
+  drawTarget( target.x, target.y, target.radius )
 end
 
 -- drawCircle( x, y, radius, { 1, 0, 0 } )
-function drawCircle( x, y, radius, color )
+function drawCircle(x, y, radius, color)
   love.graphics.setColor(color)
   love.graphics.circle( "fill", x, y, radius, 100 )
 end
 
 local red = { 1, 0, 0 }
 local white = { 1, 1, 1 }
-function drawTarget(x, y)
-  drawCircle( x, y, 50, red )
-  drawCircle( x, y, 40, white )
-  drawCircle( x, y, 30, red )
-  drawCircle( x, y, 20, white )
-  drawCircle( x, y, 10, red )
+function drawTarget(x, y, radius)
+  drawCircle( x, y, radius, red )
+  drawCircle( x, y, radius - ( radius / 5 ), white )
+  drawCircle( x, y, radius - ( radius / 5 * 2 ), red )
+  drawCircle( x, y, radius - ( radius / 5 * 3 ), white )
+  drawCircle( x, y, radius - ( radius / 5 * 4 ), red )
 end
