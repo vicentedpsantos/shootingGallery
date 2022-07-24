@@ -1,7 +1,7 @@
-require("config")
-require("lib.game")
-require("lib.sprites")
-require("lib.menu")
+require( "config" )
+require( "lib.game" )
+require( "lib.sprites" )
+require( "lib.menu" )
 
 -- Colors
 red = { 1, 0, 0 }
@@ -19,7 +19,7 @@ function drawCircle( x, y, radius, color )
   love.graphics.circle( "fill", x, y, radius, 100 )
 end
 
-function drawTarget(x, y, radius)
+function drawTarget( x, y, radius )
   drawCircle( x, y, radius, red )
   drawCircle( x, y, radius - ( radius / 5 ), white )
   drawCircle( x, y, radius - ( radius / 5 * 2 ), red )
@@ -53,5 +53,5 @@ end
 function drawLastScores()
   love.graphics.setColor( white )
   love.graphics.setFont( menuFont )
-  love.graphics.print("Your score was " .. game.score, menu.lastScore.x, menu.lastScore.y)
+  love.graphics.print( "Your score was " .. game.score, menu.lastScore.x, menu.lastScore.y )
 end

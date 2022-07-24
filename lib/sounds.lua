@@ -1,6 +1,6 @@
 sounds = {
-  blast = love.audio.newSource("assets/sounds/blast.ogg", "stream"),
-  miss = love.audio.newSource("assets/sounds/miss.ogg", "stream")
+  blast = love.audio.newSource( "assets/sounds/blast.ogg", "stream" ),
+  miss = love.audio.newSource( "assets/sounds/miss.ogg", "stream" )
 }
 
 function blast()

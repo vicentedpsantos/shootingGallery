@@ -29,7 +29,7 @@ function love.mousepressed(x, y, button, istouch, presses)
   end
 
   if button == 1 and game.isRunning() then -- 1 is the primary mouse button
-    if target.hasBeenShot({ x, y }) then
+    if target.hasBeenShot( { x, y } ) then
       game.addScore(1)
 
       target.reposition()

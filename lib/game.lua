@@ -1,7 +1,7 @@
 game = {}
 
 game.timer = 0
-game.tickTime = function(dt)
+game.tickTime = function( dt )
   if game.timer > 0 then
     game.timer = game.timer - dt
   end
@@ -12,7 +12,7 @@ game.tickTime = function(dt)
 end
 
 game.score = 0
-game.addScore = function(points)
+game.addScore = function( points )
   points = points or 1
 
   game.score = game.score + points

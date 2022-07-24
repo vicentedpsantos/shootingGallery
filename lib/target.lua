@@ -9,8 +9,8 @@ target.reposition = function()
   local gap = target.radius + padding
   width, height = love.graphics.getDimensions()
 
-  target.x = math.random(gap, width - gap)
-  target.y = math.random(gap, height - gap)
+  target.x = math.random( gap, width - gap )
+  target.y = math.random( gap, height - gap )
 end
 
 target.hasBeenShot = function(atCoord)
