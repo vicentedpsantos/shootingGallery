@@ -34,7 +34,7 @@ function love.mousepressed(x, y, button, istouch, presses)
 
       target.reposition()
       blast()
-    elseif game.isRunning() then
+    else
       miss()
     end
   end
