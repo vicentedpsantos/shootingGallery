@@ -2,7 +2,6 @@ sprites = {}
 
 spritePaths = {
   sky = "assets/sprites/sky.png",
-  target ="assets/sprites/target.png",
   crosshairs = "assets/sprites/crosshairs.png"
 }
 
