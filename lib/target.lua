@@ -16,9 +16,5 @@ end
 target.hasBeenShot = function(atCoord)
   local mouseToTarget = math.sqrt( (atCoord[1] - target.x)^2 + (atCoord[2] - target.y)^2 )
 
-  if mouseToTarget < target.radius then
-    return true
-  else
-    return false
-  end
+  return mouseToTarget < target.radius
 end

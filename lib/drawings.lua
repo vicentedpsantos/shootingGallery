@@ -1,5 +1,7 @@
-require("lib.game")
 require("config")
+require("lib.game")
+require("lib.sprites")
+require("lib.menu")
 
 -- Colors
 red = { 1, 0, 0 }
@@ -26,20 +28,30 @@ function drawTarget(x, y, radius)
 end
 
 function drawTimer()
-  windowWidth = love.graphics.getWidth()
-
   love.graphics.setColor( white )
-  love.graphics.setFont( gameFont )
+  love.graphics.setFont( regularFont )
   love.graphics.print( math.ceil(game.timer) .. "s",  (windowWidth / 2) - 20, 10 )
 end
 
 function drawScore()
   love.graphics.setColor( white )
-  love.graphics.setFont( gameFont )
+  love.graphics.setFont( regularFont )
   love.graphics.print( "Score: " .. game.score, 10, 10 )
 end
 
 function drawBackground()
   love.graphics.setColor( white )
-  love.graphics.draw(sprites.sky, 0, 0)
+  love.graphics.draw( sprites.sky, 0, 0 )
+end
+
+function drawMenu()
+  love.graphics.setColor( white )
+  love.graphics.setFont( menuFont )
+  love.graphics.draw( menu.newGame.text, menu.newGame.y, menu.newGame.y )
+end
+
+function drawLastScores()
+  love.graphics.setColor( white )
+  love.graphics.setFont( menuFont )
+  love.graphics.print("Your score was " .. game.score, menu.lastScore.x, menu.lastScore.y)
 end
