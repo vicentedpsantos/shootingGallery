@@ -28,6 +28,7 @@ end
 
 -- This function is responsible for drawing things on the screen
 function love.draw()
+  drawBackground()
   drawScore()
   drawTimer()
   drawTarget( target.x, target.y, target.radius )

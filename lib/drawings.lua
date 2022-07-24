@@ -4,8 +4,10 @@ require("config")
 -- Colors
 red = { 1, 0, 0 }
 white = { 1, 1, 1 }
+yellow = { 1, 1, 0 }
 
 function drawCrosshairs()
+  love.graphics.setColor( yellow )
   love.graphics.draw( sprites.crosshairs, love.mouse.getX() - 20, love.mouse.getY() - 20 )
 end
 
@@ -35,4 +37,9 @@ function drawScore()
   love.graphics.setColor( white )
   love.graphics.setFont( gameFont )
   love.graphics.print( "Score: " .. game.score, 10, 10 )
+end
+
+function drawBackground()
+  love.graphics.setColor( white )
+  love.graphics.draw(sprites.sky, 0, 0)
 end

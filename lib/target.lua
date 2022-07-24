@@ -14,7 +14,7 @@ target.reposition = function()
 end
 
 target.hasBeenShot = function(atCoord)
-  mouseToTarget = math.sqrt( (atCoord[1] - target.x)^2 + (atCoord[2] - target.y)^2 )
+  local mouseToTarget = math.sqrt( (atCoord[1] - target.x)^2 + (atCoord[2] - target.y)^2 )
 
   if mouseToTarget < target.radius then
     return true
