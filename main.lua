@@ -1,6 +1,7 @@
 -- Major variables are declared in this function
 function love.load()
   gameFont = love.graphics.newFont("assets/chocolate_covered_raindrops.ttf", 40)
+
   target = {}
   target.x = 300
   target.y = 300
@@ -38,8 +39,15 @@ function drawTarget(x, y, radius)
   drawCircle( x, y, radius - ( radius / 5 * 3 ), white )
   drawCircle( x, y, radius - ( radius / 5 * 4 ), red )
 end
+
 function drawScore()
   love.graphics.setColor(white)
   love.graphics.setFont(gameFont)
   love.graphics.print("Score: " .. score, 10, 10)
+end
+
+function love.mousepressed(x, y, button, istouch, presses)
+  if button == 1 then -- 1 is the primary mouse button
+    score = score + 1
+  end
 end
