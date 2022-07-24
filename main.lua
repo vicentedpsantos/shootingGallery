@@ -2,6 +2,7 @@ require("lib.drawings")
 require("lib.sprites")
 require("lib.target")
 require("lib.game")
+require("lib.sounds")
 
 -- Major variables are declared in this function
 function love.load()
@@ -23,6 +24,8 @@ end
 function love.mousepressed(x, y, button, istouch, presses)
   if (game.isPaused() or game.isOver()) and menu.newGame.hasBeenClicked(x, y) then
     game.run()
+
+    return
   end
 
   if button == 1 and game.isRunning() then -- 1 is the primary mouse button
@@ -30,6 +33,9 @@ function love.mousepressed(x, y, button, istouch, presses)
       game.addScore(1)
 
       target.reposition()
+      blast()
+    elseif game.isRunning() then
+      miss()
     end
   end
 end
