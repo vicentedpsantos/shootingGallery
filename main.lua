@@ -12,6 +12,13 @@ function love.load()
 
   score = 0
   timer = 10
+
+  sprites = {}
+  sprites.sky = love.graphics.newImage("assets/sprites/sky.png")
+  sprites.target = love.graphics.newImage("assets/sprites/target.png")
+  sprites.crosshairs = love.graphics.newImage("assets/sprites/crosshairs.png")
+
+  love.mouse.setVisible(false)
 end
 
 -- dt = Delta Time
@@ -37,6 +44,11 @@ function love.draw()
   drawScore()
   drawTimer()
   drawTarget( target.x, target.y, target.radius )
+  drawCrosshairs()
+end
+
+function drawCrosshairs()
+  love.graphics.draw(sprites.crosshairs, love.mouse.getX() - 20, love.mouse.getY() - 20)
 end
 
 -- drawCircle( x, y, radius, { 1, 0, 0 } )
